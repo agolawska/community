@@ -1,6 +1,6 @@
 ## Overview
 
-This document defines the ownership policy and the decision-making process within the [Kyma](../../../) organization.
+xxxThis document defines the ownership policy and the decision-making process within the [Kyma](../../../) organization.
 
 ## Scope
 
