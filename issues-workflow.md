@@ -24,9 +24,10 @@ The default labels provided by GitHub are as follows:
 Here are the custom labels introduced by the Kyma team:
 
 * `WIP` indicates that an issue is already in progress.
+* `decision` indicates that an issue is related to a decision.
 * `priority/critical` indicates the top-priority of a given issue.
 * `area/{CAPABILITY_NAME}` indicates which capabilities are related to a given issue. You can assign more than one `area` label an issue.
-* `security/{SCORE}` indicates the security issue based on the [CVSSv3](https://www.first.org/cvss/calculator/3.0) security rating.
+* `security/{SEVERITY}` indicates a security issue based on its [CVSSv3](https://www.first.org/cvss/calculator/3.0) severity, either `low`, `medium`, `high`, or `critical`.
 * `sig/{SIG_NAME}` indicates which [Special interest group (SIG)](./sig-and-wg/README.md) identified the issue and is responsible for further follow-up on the issue.
 * `wg/{WG_NAME}` indicates which [Working group (WG)](./sig-and-wg/README.md) identified the issue and is responsible for further follow-up on the issue.
 
@@ -40,11 +41,12 @@ There are five different stages of the triage:
 
 | Stage | Description | Labels |
 |--------- |----------|---------|
-| Validity | Asses the validity of the issue (whether it is taken for the further triage and proper classification). | invalid, duplicate, wontfix, question |
-| Kind | Differentiate whether the related issue is a new feature or a bug. | enhancement, bug |
+| Validity | Assess the validity of the issue (whether it is taken for the further triage and proper classification). | invalid, duplicate, wontfix, question |
+| Kind | Differentiate whether the related issue is a new feature or a bug. | enhancement, bug, test-failing |
+| Decision | Check if the issue is related to a [decision](governance.md#decision-making) | decision |
 | Help | Identify issues that do not have high priority and can be taken by the community. | help wanted, good first issue|
+| Security | Specify the [CVSSv3](https://www.first.org/cvss/calculator/3.0) severity with the support of the security team. | security/{SEVERITY} |
 | SIG/WG | Clarify which SIG or WG is involved in this issue and is responsible for the further follow-up on the issue. | sig/{SIG_NAME}, wg/{WG_NAME}|
-| Security | Specify the [CVSSv3](https://www.first.org/cvss/calculator/3.0) security rating with the support of the security team. | security/{SCORE} |
 | Priority | Prioritize issues in the general Kyma backlog to select those which are the most critical and should be taken as first. | priority/critical |
 | Area | Clarify which capabilities are involved in a given issue. | area/{CAPABILITY_NAME} |
 
@@ -64,6 +66,17 @@ Contributors mark issues with the `WIP` label when they start working on it. Whe
 
 ### Team backlog (optional)
 If any team wants to keep team backlog (assign issues they want to work on later), they can assign it to the Github milestone with no due date named with following pattern: `{TEAM_NAME} backlog`.
+
+### Stale issues
+
+To keep the Kyma backlog clean, the bot monitors all repositories in the organization. It marks old, inactive issues with the `stale` label and closes them after a given period of time. For configuration details, check [this](https://github.com/kyma-project/kyma/blob/master/.github/stale.yml) sample file.
+
+Although the bot helps us to keep the backlog clean, we regularly monitor its activities to make sure it is not closing issues that are still valid and important for Kyma. The Kyma team reviews [this](https://app.zenhub.com/workspaces/kyma---all-repositories-5b6d5985084045741e744dea/boards?labels=stale&showPRs=false) ZenHub board and acts on them as follows:
+- Closed issues:
+  - If the issue is still valid, reopen it and remove the `stale` label from it.
+  -  If the issue is invalid, change the `stale` label to a more relevant one and add a comment that provides background and explains why the issue remains closed.
+- Open issues:
+  -  If the issue is valid, remove the `stale` label from it.
 
 ## ZenHub links
 

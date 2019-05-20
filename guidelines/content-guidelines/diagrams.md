@@ -7,13 +7,17 @@ To convey the intended message effectively in a diagram, follow these basic prin
 - Limit visual noise.
 - Keep it simple but descriptive.
 
-For details on how to format diagrams and their elements in the Kyma documents, see the particular document sections.
+For details on how to format diagrams and their elements in Kyma documents, see the particular document sections.
 
 ## Tool
 
-Use [draw.io](https://www.draw.io) as a recommended tool. Export the diagram as PNG or SVG format and save it under the corresponding `assets` directory. Save the source file as `{diagram-name}.xml` or `{diagram-name}.html` in the same location.
+Use [draw.io](https://www.draw.io) as a recommended tool. Export the diagram as an SVG and save it under the corresponding `assets` directory.
 
-> **NOTE:** Update the `{diagram-name}.html` source file each time you edit the diagram.
+## Size
+
+Keep your diagram reasonable in size. Preview the image at full size to see how it fits into the whole document. The diagram should be large enough to be legible and convey the intended message, but should not dominate the whole document. To demonstrate large concepts, simplify the diagram or divide it into a few smaller ones.
+
+>**NOTE:** The diagrams keep their original aspect ratio on both the Console UI and the `kyma-project.io` website. However, the maximum width on the website is 860px. Any diagram that exceeds that limit is resized to the maximum width. 
 
 ## Background
 
